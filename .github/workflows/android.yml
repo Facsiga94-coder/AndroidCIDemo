@@ -27,6 +27,3 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
-      with:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        REPO_BRANCH: main # Add the branch you want, or remove if optional
