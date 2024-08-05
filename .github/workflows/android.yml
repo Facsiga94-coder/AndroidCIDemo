@@ -28,20 +28,8 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
-
-    - name: Releasing using Hub
-      uses: ShaunLWM/action-release-debugapk@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        APP_FOLDER: app
-        RELEASE_TITLE: New Build
-
     - name: Build & Publish Debug APK
       uses: ShaunLWM/action-release-debugapk@0.0.7
       with:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        REPO_BRANCH: main
-
-          
+        REPO_BRANCH: main # Add the branch you want, or remove if optional
